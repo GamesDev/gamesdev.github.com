@@ -83,11 +83,16 @@
       <hr />
       <div class="row">
         <div class="span12">
- <form action="https://madmimi.com/signups/subscribe/68856" method="post" id="mad_mimi_signup_form"> 
+  <form action="https://madmimi.com/signups/subscribe/68856" method="post" id="mad_mimi_signup_form"> 
   <fieldset> 
    <div class="mimi_field text email required"> 
     <label for="signup_email">Email</label> 
     <input id="signup_email" name="signup[email]" type="text" placeholder="you@example.com" class="required"> 
+    <div class="mimi_field_feedback"></div><span class="mimi_funk"></span> 
+   </div> 
+   <div class="mimi_field text"> 
+    <label for="signup_name" id="wf_label">Name</label> 
+    <input id="signup_name" name="signup[name]" type="text"> 
     <div class="mimi_field_feedback"></div><span class="mimi_funk"></span> 
    </div> 
    <div class="mimi_field action"> 
@@ -205,6 +210,7 @@
   }
 })();
 </script>
+
 
         </div>
       </div>
