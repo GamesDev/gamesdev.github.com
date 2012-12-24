@@ -83,20 +83,23 @@
       <hr />
       <div class="row">
         <div class="span12">
+        
+        
   <form action="https://madmimi.com/signups/subscribe/68856" method="post" id="mad_mimi_signup_form"> 
   <fieldset> 
-   <div class="mimi_field text email required"> 
-    <label for="signup_email">Email</label> 
-    <input id="signup_email" name="signup[email]" type="text" placeholder="you@example.com" class="required"> 
-    <div class="mimi_field_feedback"></div><span class="mimi_funk"></span> 
-   </div> 
-   <div class="mimi_field text"> 
-    <label for="signup_name" id="wf_label">Name</label> 
+   <div class="mimi_field text required"> 
+    <label for="signup_name" id="wf_label">Имя</label> 
     <input id="signup_name" name="signup[name]" type="text"> 
     <div class="mimi_field_feedback"></div><span class="mimi_funk"></span> 
    </div> 
+   <div class="mimi_field text email required"> 
+    <label for="signup_email">Электронная почта</label> 
+    <input id="signup_email" name="signup[email]" type="text" placeholder="Ваша-почта@gmail.com" class="required"> 
+    <div class="mimi_field_feedback"></div><span class="mimi_funk"></span> 
+   </div> 
+
    <div class="mimi_field action"> 
-    <input id="webform_submit_button" value="Зарегистрироваться!" type="submit" class="submit" data-default-text="Зарегистрироваться!" data-submitting-text="Sending…" data-invalid-text="↑ You forgot some required fields"> 
+    <input id="webform_submit_button" value="Зарегистрироваться!" type="submit" class="submit" data-default-text="Зарегистрироваться!" data-submitting-text="Отправка…" data-invalid-text="↑ Заполните форму"> 
    </div> 
   </fieldset> 
  </form> 
@@ -131,7 +134,7 @@
           input.value = "";
         }
         if(input.id == "signup_email") {
-          input.placeholder = "you@example.com";
+          input.placeholder = "Ваша-почта@gmail.com";
         } else {
           input.placeholder = "";
         }
@@ -176,21 +179,21 @@
   function emailErrorMessage(input, allDivs) {
     if(input.getAttribute("data-webform-type") == "iframe") {
       input.className = "required invalid";
-      input.placeholder = input.getAttribute("data-required-message") || "This field is required";
+      input.placeholder = input.getAttribute("data-required-message") || "Обязательное поле";
     } else {
-      allDivs[0].innerHTML = input.getAttribute("data-invalid-message") || "This field is invalid";
+      allDivs[0].innerHTML = input.getAttribute("data-invalid-message") || "Исправьте, пожалуйста";
     }
   }
 
   function fieldErrorMessage(input, allDivs) {
     if(input.getAttribute("data-webform-type") == "iframe") {
       input.className = "required invalid";
-      input.placeholder = input.getAttribute("data-required-message") || "This field is required";
+      input.placeholder = input.getAttribute("data-required-message") || "Обязательное поле";
     } else {
       for(var i = 0; i < allDivs.length; ++i) {
         var element = allDivs[i];
         if(element.className.indexOf("mimi_field_feedback") >= 0) {
-          return element.innerHTML = input.getAttribute("data-required-message") || "This field is required";
+          return element.innerHTML = input.getAttribute("data-required-message") || "Обязательное поле";
         }
       }
     }
